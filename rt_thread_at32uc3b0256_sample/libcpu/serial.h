@@ -43,8 +43,8 @@ struct avr32_serial_device
     struct avr32_serial_int_rx* int_rx;
 };
 
-static rt_err_t rt_hw_serial_register(rt_device_t device, const char* name, rt_uint32_t flag, struct avr32_serial_device *serial);
+/* static */ rt_err_t rt_hw_serial_register(rt_device_t device, const char* name, rt_uint32_t flag, struct avr32_serial_device *serial);
 
-static void rt_hw_serial_isr(void);
+/* static */ void rt_hw_serial_isr(void);
 
 #endif

@@ -38,8 +38,6 @@ components\drivers\ipc\workqueue.c
 
 components\drivers\misc\pin.c
 
-components\drivers\serial\serial.c
-
 components\finsh\cmd.c
 
 components\finsh\msh.c

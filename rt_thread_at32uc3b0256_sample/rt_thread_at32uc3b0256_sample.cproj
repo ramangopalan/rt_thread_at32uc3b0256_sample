@@ -534,9 +534,9 @@
     <Compile Include="components\drivers\misc\pin.c">
       <SubType>compile</SubType>
     </Compile>
-    <Compile Include="components\drivers\serial\serial.c">
+    <None Include="components\drivers\serial\serial.c">
       <SubType>compile</SubType>
-    </Compile>
+    </None>
     <Compile Include="components\finsh\cmd.c">
       <SubType>compile</SubType>
     </Compile>

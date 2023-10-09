@@ -195,7 +195,7 @@ static rt_err_t rt_serial_control (rt_device_t dev, int cmd, void *args)
  * serial register for STM32
  * support STM32F103VB and STM32F103ZE
  */
-static rt_err_t rt_hw_serial_register(rt_device_t device, const char* name, rt_uint32_t flag, struct avr32_serial_device *serial)
+/* static */ rt_err_t rt_hw_serial_register(rt_device_t device, const char* name, rt_uint32_t flag, struct avr32_serial_device *serial)
 {
     RT_ASSERT(device != RT_NULL);
 
@@ -221,7 +221,7 @@ static rt_err_t rt_hw_serial_register(rt_device_t device, const char* name, rt_u
 }
 
 /* ISR for serial interrupt */
-static void rt_hw_serial_isr(void)
+/* static */ void rt_hw_serial_isr(void)
 {
     struct avr32_serial_device* uart = (struct avr32_serial_device*) _rt_usart_device.user_data;
     rt_base_t level;

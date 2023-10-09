@@ -39,12 +39,12 @@ void rt_thread_entry_led2(void* parameter)
         /* led on */
         //rt_kprintf("LED2 on");
         gpio_tgl_gpio_pin(AVR32_PIN_PA07);
-        //rt_thread_delay(RT_TICK_PER_SECOND);
+        rt_thread_delay(RT_TICK_PER_SECOND);
 
         /* led off */
         //rt_kprintf("LED2 off\r\n");
         gpio_tgl_gpio_pin(AVR32_PIN_PA07);
-        //rt_thread_delay(RT_TICK_PER_SECOND);
+        rt_thread_delay(RT_TICK_PER_SECOND);
     }
 }
 
