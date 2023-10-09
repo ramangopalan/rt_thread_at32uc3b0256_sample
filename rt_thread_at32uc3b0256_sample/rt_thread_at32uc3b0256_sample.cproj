@@ -1,0 +1,737 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectVersion>7.0</ProjectVersion>
+    <ToolchainName>com.Atmel.AVRGCC32.C</ToolchainName>
+    <ProjectGuid>dce6c7e3-ee26-4d79-826b-08594b9ad897</ProjectGuid>
+    <avrdevice>AT32UC3B0256</avrdevice>
+    <avrdeviceseries>uc3b</avrdeviceseries>
+    <OutputType>Executable</OutputType>
+    <Language>C</Language>
+    <OutputFileName>$(MSBuildProjectName)</OutputFileName>
+    <OutputFileExtension>.elf</OutputFileExtension>
+    <OutputDirectory>$(MSBuildProjectDirectory)\$(Configuration)</OutputDirectory>
+    <AssemblyName>rt_thread_at32uc3b0256_sample</AssemblyName>
+    <Name>rt_thread_at32uc3b0256_sample</Name>
+    <RootNamespace>rt_thread_at32uc3b0256_sample</RootNamespace>
+    <ToolchainFlavour>Native</ToolchainFlavour>
+    <KeepTimersRunning>true</KeepTimersRunning>
+    <OverrideVtor>false</OverrideVtor>
+    <CacheFlash>true</CacheFlash>
+    <ProgFlashFromRam>true</ProgFlashFromRam>
+    <RamSnippetAddress>0x20000000</RamSnippetAddress>
+    <UncachedRange />
+    <preserveEEPROM>true</preserveEEPROM>
+    <OverrideVtorValue>exception_table</OverrideVtorValue>
+    <BootSegment>2</BootSegment>
+    <ResetRule>0</ResetRule>
+    <eraseonlaunchrule>0</eraseonlaunchrule>
+    <EraseKey />
+    <AsfFrameworkConfig>
+      <framework-data>
+        <options />
+        <configurations>
+          <configuration key="config.avr32.utils.trampoline" value="yes" default="yes" content-id="Atmel.ASF" />
+          <configuration key="config.avr32.utils.gccstartup" value="yes" default="yes" content-id="Atmel.ASF" />
+          <configuration key="config.utils.interrupt.intc" value="yes" default="yes" content-id="Atmel.ASF" />
+          <configuration key="config.avr32.drivers.intc.exception" value="yes" default="yes" content-id="Atmel.ASF" />
+        </configurations>
+        <files>
+          <file path="src/main.c" framework="" version="" source="common/applications/user_application/main.c" changed="False" content-id="Atmel.ASF" />
+          <file path="src/config/conf_board.h" framework="" version="" source="common/applications/user_application/user_board/config/conf_board.h" changed="False" content-id="Atmel.ASF" />
+          <file path="src/ASF/common/boards/user_board/init.c" framework="" version="" source="common/boards/user_board/init.c" changed="False" content-id="Atmel.ASF" />
+          <file path="src/ASF/common/boards/user_board/user_board.h" framework="" version="" source="common/boards/user_board/user_board.h" changed="False" content-id="Atmel.ASF" />
+        </files>
+        <documentation help="https://asf.microchip.com/docs/3.49.1/common.applications.user_application.user_board.uc3b/html/index.html" />
+        <offline-documentation help="" />
+        <dependencies>
+          <content-extension eid="atmel.asf" uuidref="Atmel.ASF" version="3.49.1" />
+        </dependencies>
+        <project id="common.applications.user_application.user_board.uc3b" value="Add" config="" content-id="Atmel.ASF" />
+        <board id="board.user_board.uc3b" value="Add" config="" content-id="Atmel.ASF" />
+      </framework-data>
+    </AsfFrameworkConfig>
+    <avrtool>com.atmel.avrdbg.tool.atmelice</avrtool>
+    <avrtoolserialnumber>J42700053627</avrtoolserialnumber>
+    <avrdeviceexpectedsignature>0x0</avrdeviceexpectedsignature>
+    <avrtoolinterface>JTAG</avrtoolinterface>
+    <com_atmel_avrdbg_tool_atmelice>
+      <ToolOptions>
+        <InterfaceProperties>
+          <JtagDbgClock>7500000</JtagDbgClock>
+        </InterfaceProperties>
+        <InterfaceName>JTAG</InterfaceName>
+      </ToolOptions>
+      <ToolType>com.atmel.avrdbg.tool.atmelice</ToolType>
+      <ToolNumber>J42700053627</ToolNumber>
+      <ToolName>Atmel-ICE</ToolName>
+    </com_atmel_avrdbg_tool_atmelice>
+    <avrtoolinterfaceclock>7500000</avrtoolinterfaceclock>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <ToolchainSettings>
+      <Avr32Gcc>
+        <avr32gcc.common.outputfiles.hex>True</avr32gcc.common.outputfiles.hex>
+        <avr32gcc.common.outputfiles.lss>True</avr32gcc.common.outputfiles.lss>
+        <avr32gcc.common.outputfiles.eep>True</avr32gcc.common.outputfiles.eep>
+        <avr32gcc.common.outputfiles.srec>True</avr32gcc.common.outputfiles.srec>
+        <avr32gcc.compiler.symbols.DefSymbols>
+          <ListValues>
+            <Value>NDEBUG</Value>
+            <Value>BOARD=USER_BOARD</Value>
+          </ListValues>
+        </avr32gcc.compiler.symbols.DefSymbols>
+        <avr32gcc.compiler.directories.IncludePaths>
+          <ListValues>
+            <Value>%24(PackRepoDir)\atmel\UC3B_DFP\1.0.29\include\AT32UC3B0256</Value>
+            <Value>../src/ASF/common/boards/user_board</Value>
+            <Value>../src</Value>
+            <Value>../src/config</Value>
+          </ListValues>
+        </avr32gcc.compiler.directories.IncludePaths>
+        <avr32gcc.compiler.optimization.level>Optimize for size (-Os)</avr32gcc.compiler.optimization.level>
+        <avr32gcc.compiler.optimization.OtherFlags>-fdata-sections</avr32gcc.compiler.optimization.OtherFlags>
+        <avr32gcc.compiler.optimization.PrepareFunctionsForGarbageCollection>True</avr32gcc.compiler.optimization.PrepareFunctionsForGarbageCollection>
+        <avr32gcc.compiler.optimization.UseAssemblerForPseudoInstructions>True</avr32gcc.compiler.optimization.UseAssemblerForPseudoInstructions>
+        <avr32gcc.compiler.warnings.AllWarnings>True</avr32gcc.compiler.warnings.AllWarnings>
+        <avr32gcc.compiler.miscellaneous.OtherFlags>-std=gnu99 -fno-strict-aliasing -Wstrict-prototypes -Wmissing-prototypes -Werror-implicit-function-declaration -Wpointer-arith -mrelax -mno-cond-exec-before-reload</avr32gcc.compiler.miscellaneous.OtherFlags>
+        <avr32gcc.linker.general.DoNotUseStandardStartFiles>True</avr32gcc.linker.general.DoNotUseStandardStartFiles>
+        <avr32gcc.linker.libraries.Libraries>
+          <ListValues>
+            <Value>libm</Value>
+          </ListValues>
+        </avr32gcc.linker.libraries.Libraries>
+        <avr32gcc.linker.optimization.GarbageCollectUnusedSections>True</avr32gcc.linker.optimization.GarbageCollectUnusedSections>
+        <avr32gcc.linker.optimization.PutReadOnlyDataInWritableDataSection>True</avr32gcc.linker.optimization.PutReadOnlyDataInWritableDataSection>
+        <avr32gcc.linker.optimization.AllowDirectReferencesToDataSection>True</avr32gcc.linker.optimization.AllowDirectReferencesToDataSection>
+        <avr32gcc.linker.miscellaneous.LinkerFlags>-Wl,--relax -Wl,-e,_trampoline</avr32gcc.linker.miscellaneous.LinkerFlags>
+        <avr32gcc.assembler.general.AssemblerFlags>-mrelax</avr32gcc.assembler.general.AssemblerFlags>
+        <avr32gcc.assembler.general.IncludePaths>
+          <ListValues>
+            <Value>%24(PackRepoDir)\atmel\UC3B_DFP\1.0.29\include\AT32UC3B0256</Value>
+            <Value>../src/ASF/common/boards/user_board</Value>
+            <Value>../src</Value>
+            <Value>../src/config</Value>
+          </ListValues>
+        </avr32gcc.assembler.general.IncludePaths>
+        <avr32gcc.preprocessingassembler.general.AssemblerFlags>-mrelax -DBOARD=USER_BOARD</avr32gcc.preprocessingassembler.general.AssemblerFlags>
+        <avr32gcc.preprocessingassembler.general.IncludePaths>
+          <ListValues>
+            <Value>%24(PackRepoDir)\atmel\UC3B_DFP\1.0.29\include\AT32UC3B0256</Value>
+            <Value>../src/ASF/common/boards/user_board</Value>
+            <Value>../src</Value>
+            <Value>../src/config</Value>
+          </ListValues>
+        </avr32gcc.preprocessingassembler.general.IncludePaths>
+      </Avr32Gcc>
+    </ToolchainSettings>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <ToolchainSettings>
+      <Avr32Gcc>
+  <avr32gcc.common.outputfiles.hex>True</avr32gcc.common.outputfiles.hex>
+  <avr32gcc.common.outputfiles.lss>True</avr32gcc.common.outputfiles.lss>
+  <avr32gcc.common.outputfiles.eep>True</avr32gcc.common.outputfiles.eep>
+  <avr32gcc.common.outputfiles.srec>True</avr32gcc.common.outputfiles.srec>
+  <avr32gcc.compiler.symbols.DefSymbols>
+    <ListValues>
+      <Value>BOARD=USERBOARD</Value>
+      <Value>__RTTHREAD__</Value>
+      <Value>RT_USING_NEWLIBC</Value>
+      <Value>RT_USING_LIBC</Value>
+      <Value>_POSIX_C_SOURCE=1</Value>
+    </ListValues>
+  </avr32gcc.compiler.symbols.DefSymbols>
+  <avr32gcc.compiler.directories.IncludePaths>
+    <ListValues>
+      <Value>%24(PackRepoDir)\atmel\UC3B_DFP\1.0.29\include\AT32UC3B0256</Value>
+      <Value>../src/ASF/common/boards/user_board</Value>
+      <Value>../src</Value>
+      <Value>../src/config</Value>
+      <Value>../include</Value>
+      <Value>../bsp_avr32uc3b</Value>
+      <Value>../components/finsh</Value>
+      <Value>../bsp_avr32uc3b/SOFTWARE_FRAMEWORK</Value>
+      <Value>../libcpu</Value>
+      <Value>../bsp_avr32uc3b/SOFTWARE_FRAMEWORK/UTILS</Value>
+      <Value>../bsp_avr32uc3b/SOFTWARE_FRAMEWORK/DRIVERS/GPIO</Value>
+      <Value>../bsp_avr32uc3b/SOFTWARE_FRAMEWORK/DRIVERS/PM</Value>
+      <Value>../bsp_avr32uc3b/SOFTWARE_FRAMEWORK/DRIVERS/USART</Value>
+      <Value>../bsp_avr32uc3b/SOFTWARE_FRAMEWORK/DRIVERS/INTC</Value>
+      <Value>../bsp_avr32uc3b/SOFTWARE_FRAMEWORK/UTILS/PREPROCESSOR</Value>
+      <Value>../components/drivers/include</Value>
+      <Value>../components/libc/compilers/common/include</Value>
+      <Value>../components/libc/compilers/common/include/posix</Value>
+    </ListValues>
+  </avr32gcc.compiler.directories.IncludePaths>
+  <avr32gcc.compiler.optimization.OtherFlags>-fmessage-length=0</avr32gcc.compiler.optimization.OtherFlags>
+  <avr32gcc.compiler.optimization.PrepareFunctionsForGarbageCollection>True</avr32gcc.compiler.optimization.PrepareFunctionsForGarbageCollection>
+  <avr32gcc.compiler.optimization.UseAssemblerForPseudoInstructions>True</avr32gcc.compiler.optimization.UseAssemblerForPseudoInstructions>
+  <avr32gcc.compiler.optimization.DebugLevel>Maximum (-g3)</avr32gcc.compiler.optimization.DebugLevel>
+  <avr32gcc.compiler.warnings.AllWarnings>True</avr32gcc.compiler.warnings.AllWarnings>
+  <avr32gcc.compiler.miscellaneous.OtherFlags />
+  <avr32gcc.linker.general.GenerateMAPFile>False</avr32gcc.linker.general.GenerateMAPFile>
+  <avr32gcc.linker.libraries.Libraries>
+    <ListValues>
+      <Value>libm</Value>
+      <Value>libc</Value>
+    </ListValues>
+  </avr32gcc.linker.libraries.Libraries>
+  <avr32gcc.linker.libraries.LibrarySearchPaths>
+    <ListValues>
+      <Value>../bsp_avr32uc3b</Value>
+    </ListValues>
+  </avr32gcc.linker.libraries.LibrarySearchPaths>
+  <avr32gcc.linker.optimization.GarbageCollectUnusedSections>True</avr32gcc.linker.optimization.GarbageCollectUnusedSections>
+  <avr32gcc.linker.optimization.PutReadOnlyDataInWritableDataSection>True</avr32gcc.linker.optimization.PutReadOnlyDataInWritableDataSection>
+  <avr32gcc.linker.optimization.AllowDirectReferencesToDataSection>True</avr32gcc.linker.optimization.AllowDirectReferencesToDataSection>
+  <avr32gcc.linker.miscellaneous.LinkerFlags>-T avr32elf_uc3b0256.lds</avr32gcc.linker.miscellaneous.LinkerFlags>
+  <avr32gcc.assembler.general.IncludePaths>
+    <ListValues>
+      <Value>%24(PackRepoDir)\atmel\UC3B_DFP\1.0.29\include\AT32UC3B0256</Value>
+      <Value>../src/ASF/common/boards/user_board</Value>
+      <Value>../src</Value>
+      <Value>../src/config</Value>
+    </ListValues>
+  </avr32gcc.assembler.general.IncludePaths>
+  <avr32gcc.assembler.debugging.DebugLevel>Default (-g)</avr32gcc.assembler.debugging.DebugLevel>
+  <avr32gcc.preprocessingassembler.general.AssemblerFlags>-DBOARD=USERBOARD</avr32gcc.preprocessingassembler.general.AssemblerFlags>
+  <avr32gcc.preprocessingassembler.general.IncludePaths>
+    <ListValues>
+      <Value>%24(PackRepoDir)\atmel\UC3B_DFP\1.0.29\include\AT32UC3B0256</Value>
+      <Value>../src/ASF/common/boards/user_board</Value>
+      <Value>../src</Value>
+      <Value>../src/config</Value>
+    </ListValues>
+  </avr32gcc.preprocessingassembler.general.IncludePaths>
+  <avr32gcc.preprocessingassembler.debugging.DebugLevel>Default (-Wa,-g)</avr32gcc.preprocessingassembler.debugging.DebugLevel>
+</Avr32Gcc>
+    </ToolchainSettings>
+  </PropertyGroup>
+  <ItemGroup>
+    <Folder Include="bsp_avr32uc3b\SOFTWARE_FRAMEWORK" />
+    <Folder Include="bsp_avr32uc3b\SOFTWARE_FRAMEWORK\BOARDS" />
+    <Folder Include="bsp_avr32uc3b\SOFTWARE_FRAMEWORK\DRIVERS" />
+    <Folder Include="bsp_avr32uc3b\SOFTWARE_FRAMEWORK\DRIVERS\FLASHC" />
+    <Folder Include="bsp_avr32uc3b\SOFTWARE_FRAMEWORK\DRIVERS\GPIO" />
+    <Folder Include="bsp_avr32uc3b\SOFTWARE_FRAMEWORK\DRIVERS\INTC" />
+    <Folder Include="bsp_avr32uc3b\SOFTWARE_FRAMEWORK\DRIVERS\USART" />
+    <Folder Include="bsp_avr32uc3b\SOFTWARE_FRAMEWORK\DRIVERS\PM" />
+    <Folder Include="bsp_avr32uc3b\SOFTWARE_FRAMEWORK\UTILS" />
+    <Folder Include="bsp_avr32uc3b\SOFTWARE_FRAMEWORK\UTILS\LIBS" />
+    <Folder Include="bsp_avr32uc3b\SOFTWARE_FRAMEWORK\UTILS\LIBS\NEWLIB_ADDONS" />
+    <Folder Include="bsp_avr32uc3b\SOFTWARE_FRAMEWORK\UTILS\LIBS\NEWLIB_ADDONS\INCLUDE" />
+    <Folder Include="bsp_avr32uc3b\SOFTWARE_FRAMEWORK\UTILS\PREPROCESSOR" />
+    <Folder Include="components\drivers\include\drivers" />
+    <Folder Include="components\drivers\include\ipc" />
+    <Folder Include="components\drivers\ipc" />
+    <Folder Include="components\drivers\misc" />
+    <Folder Include="components\drivers\include" />
+    <Folder Include="components\drivers\serial" />
+    <Folder Include="components\finsh" />
+    <Folder Include="components\libc" />
+    <Folder Include="components\libc\compilers" />
+    <Folder Include="components\libc\compilers\common" />
+    <Folder Include="components\libc\compilers\common\include" />
+    <Folder Include="components\libc\compilers\common\include\sys" />
+    <Folder Include="components\libc\compilers\common\include\posix" />
+    <Folder Include="components\libc\compilers\newlib" />
+    <Folder Include="components\drivers" />
+    <Folder Include="components\libc\compilers\newlib\machine" />
+    <Folder Include="components\libc\posix" />
+    <Folder Include="components\libc\posix\io" />
+    <Folder Include="components\libc\posix\ipc" />
+    <Folder Include="kernel" />
+    <Folder Include="libcpu" />
+    <Folder Include="bsp_avr32uc3b" />
+    <Folder Include="include" />
+    <Folder Include="components" />
+    <Folder Include="src\" />
+    <Folder Include="src\ASF\" />
+    <Folder Include="src\ASF\common\" />
+    <Folder Include="src\ASF\common\boards\" />
+    <Folder Include="src\ASF\common\boards\user_board\" />
+    <Folder Include="src\config\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bsp_avr32uc3b\avr32elf_uc3b0256.lds">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="src\asf.h">
+      <SubType>compile</SubType>
+    </None>
+    <Compile Include="bsp_avr32uc3b\application.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="bsp_avr32uc3b\board.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="bsp_avr32uc3b\rtconfig.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="bsp_avr32uc3b\SOFTWARE_FRAMEWORK\BOARDS\board.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="bsp_avr32uc3b\SOFTWARE_FRAMEWORK\DRIVERS\FLASHC\flashc.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="bsp_avr32uc3b\SOFTWARE_FRAMEWORK\DRIVERS\FLASHC\flashc.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="bsp_avr32uc3b\SOFTWARE_FRAMEWORK\DRIVERS\GPIO\gpio.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="bsp_avr32uc3b\SOFTWARE_FRAMEWORK\DRIVERS\GPIO\gpio.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <None Include="bsp_avr32uc3b\SOFTWARE_FRAMEWORK\DRIVERS\INTC\exception.x">
+      <SubType>compile</SubType>
+    </None>
+    <Compile Include="bsp_avr32uc3b\SOFTWARE_FRAMEWORK\DRIVERS\INTC\intc.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="bsp_avr32uc3b\SOFTWARE_FRAMEWORK\DRIVERS\INTC\intc.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="bsp_avr32uc3b\SOFTWARE_FRAMEWORK\DRIVERS\PM\pm.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="bsp_avr32uc3b\SOFTWARE_FRAMEWORK\DRIVERS\PM\pm.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="bsp_avr32uc3b\SOFTWARE_FRAMEWORK\DRIVERS\PM\pm_conf_clocks.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="bsp_avr32uc3b\SOFTWARE_FRAMEWORK\DRIVERS\PM\power_clocks_lib.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="bsp_avr32uc3b\SOFTWARE_FRAMEWORK\DRIVERS\PM\power_clocks_lib.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="bsp_avr32uc3b\SOFTWARE_FRAMEWORK\DRIVERS\USART\usart.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="bsp_avr32uc3b\SOFTWARE_FRAMEWORK\DRIVERS\USART\usart.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="bsp_avr32uc3b\SOFTWARE_FRAMEWORK\UTILS\compiler.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="bsp_avr32uc3b\SOFTWARE_FRAMEWORK\UTILS\LIBS\NEWLIB_ADDONS\INCLUDE\nlao_cpu.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="bsp_avr32uc3b\SOFTWARE_FRAMEWORK\UTILS\LIBS\NEWLIB_ADDONS\INCLUDE\nlao_exceptions.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="bsp_avr32uc3b\SOFTWARE_FRAMEWORK\UTILS\LIBS\NEWLIB_ADDONS\INCLUDE\nlao_interrupts.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="bsp_avr32uc3b\SOFTWARE_FRAMEWORK\UTILS\LIBS\NEWLIB_ADDONS\INCLUDE\nlao_io.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="bsp_avr32uc3b\SOFTWARE_FRAMEWORK\UTILS\LIBS\NEWLIB_ADDONS\INCLUDE\nlao_usart.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="bsp_avr32uc3b\SOFTWARE_FRAMEWORK\UTILS\parts.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="bsp_avr32uc3b\SOFTWARE_FRAMEWORK\UTILS\PREPROCESSOR\mrepeat.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="bsp_avr32uc3b\SOFTWARE_FRAMEWORK\UTILS\PREPROCESSOR\preprocessor.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="bsp_avr32uc3b\SOFTWARE_FRAMEWORK\UTILS\PREPROCESSOR\stringz.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="bsp_avr32uc3b\SOFTWARE_FRAMEWORK\UTILS\PREPROCESSOR\tpaste.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="bsp_avr32uc3b\startup.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="components\drivers\include\drivers\adc.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="components\drivers\include\drivers\alarm.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="components\drivers\include\drivers\audio.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="components\drivers\include\drivers\can.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="components\drivers\include\drivers\cputime.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="components\drivers\include\drivers\cputimer.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="components\drivers\include\drivers\crypto.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="components\drivers\include\drivers\dac.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="components\drivers\include\drivers\gpt.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="components\drivers\include\drivers\hwtimer.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="components\drivers\include\drivers\i2c-bit-ops.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="components\drivers\include\drivers\i2c.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="components\drivers\include\drivers\i2c_dev.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="components\drivers\include\drivers\lcd.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="components\drivers\include\drivers\lptimer.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="components\drivers\include\drivers\mmc.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="components\drivers\include\drivers\mmcsd_card.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="components\drivers\include\drivers\mmcsd_cmd.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="components\drivers\include\drivers\mmcsd_core.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="components\drivers\include\drivers\mmcsd_host.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="components\drivers\include\drivers\mtd_nand.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="components\drivers\include\drivers\mtd_nor.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="components\drivers\include\drivers\phy.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="components\drivers\include\drivers\phy_mdio.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="components\drivers\include\drivers\pin.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="components\drivers\include\drivers\pm.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="components\drivers\include\drivers\pulse_encoder.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="components\drivers\include\drivers\rtc.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="components\drivers\include\drivers\rt_dev_bus.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="components\drivers\include\drivers\rt_drv_pwm.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="components\drivers\include\drivers\rt_inputcapture.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="components\drivers\include\drivers\sd.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="components\drivers\include\drivers\sdio.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="components\drivers\include\drivers\sdio_func_ids.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="components\drivers\include\drivers\sensor.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="components\drivers\include\drivers\serial.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="components\drivers\include\drivers\serial_v2.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="components\drivers\include\drivers\spi.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="components\drivers\include\drivers\touch.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="components\drivers\include\drivers\usb_common.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="components\drivers\include\drivers\usb_device.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="components\drivers\include\drivers\usb_host.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="components\drivers\include\drivers\watchdog.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="components\drivers\include\drivers\wlan.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="components\drivers\include\ipc\completion.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="components\drivers\include\ipc\dataqueue.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="components\drivers\include\ipc\pipe.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="components\drivers\include\ipc\poll.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="components\drivers\include\ipc\ringblk_buf.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="components\drivers\include\ipc\ringbuffer.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="components\drivers\include\ipc\waitqueue.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="components\drivers\include\ipc\workqueue.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="components\drivers\include\rtdevice.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="components\drivers\ipc\completion.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="components\drivers\ipc\dataqueue.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="components\drivers\ipc\pipe.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="components\drivers\ipc\ringblk_buf.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="components\drivers\ipc\ringbuffer.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="components\drivers\ipc\waitqueue.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="components\drivers\ipc\workqueue.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="components\drivers\misc\pin.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="components\drivers\serial\serial.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="components\finsh\cmd.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="components\finsh\finsh.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="components\finsh\msh.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="components\finsh\msh.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="components\finsh\msh_parse.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="components\finsh\msh_parse.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="components\finsh\shell.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="components\finsh\shell.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="components\libc\compilers\common\cctype.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="components\libc\compilers\common\cstdio.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="components\libc\compilers\common\cstdlib.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="components\libc\compilers\common\cstring.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="components\libc\compilers\common\ctime.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="components\libc\compilers\common\cwchar.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="components\libc\compilers\common\include\compiler_private.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="components\libc\compilers\common\include\dirent.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="components\libc\compilers\common\include\posix\ctype.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="components\libc\compilers\common\include\posix\stdio.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="components\libc\compilers\common\include\posix\stdlib.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="components\libc\compilers\common\include\posix\string.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="components\libc\compilers\common\include\posix\wchar.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="components\libc\compilers\common\include\sys\ioctl.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="components\libc\compilers\common\include\sys\select.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="components\libc\compilers\common\include\sys\signal.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="components\libc\compilers\common\include\sys\statfs.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="components\libc\compilers\common\include\sys\time.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="components\libc\compilers\common\include\sys\unistd.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="components\libc\compilers\common\include\sys\utsname.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="components\libc\compilers\common\include\sys\vfs.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="components\libc\compilers\common\include\unistd.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="components\libc\compilers\newlib\fcntl.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="components\libc\compilers\newlib\machine\time.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="components\libc\compilers\newlib\syscalls.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\rtatomic.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\rtdbg.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\rtdebug.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\rtdef.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\rthw.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\rtm.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\rtservice.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\rtthread.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="kernel\clock.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="kernel\components.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="kernel\device.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="kernel\idle.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="kernel\ipc.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="kernel\irq.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="kernel\kservice.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="kernel\mem.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="kernel\mempool.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="kernel\object.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="kernel\scheduler_up.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="kernel\thread.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="kernel\timer.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="libcpu\context_gcc.S">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="libcpu\cpu.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="libcpu\exception_gcc.S">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="libcpu\interrupt.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="libcpu\serial.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="libcpu\serial.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="libcpu\stack.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <None Include="src\ASF\common\boards\user_board\user_board.h">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="src\config\conf_board.h">
+      <SubType>compile</SubType>
+    </None>
+    <Compile Include="src\ASF\common\boards\user_board\init.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\main.c">
+      <SubType>compile</SubType>
+    </Compile>
+  </ItemGroup>
+  <Import Project="$(AVRSTUDIO_EXE_PATH)\\Vs\\Compiler.targets" />
+</Project>
