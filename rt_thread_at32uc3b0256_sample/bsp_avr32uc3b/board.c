@@ -55,6 +55,10 @@ static void peripherals_init(void)
 
     /*
      * USART1 initialization
+     * Raman: From the data-sheet (at32uc3b0256, page 8), I gather the following:
+     * 24 PB02 GPIO 34 EIC - EXTINT[6] TC - A1 USART1 - TXD
+     * 25 PB03 GPIO 35 EIC - EXTINT[7] TC - B1 USART1 - RXD
+     * So, the RX must be PB03; And TX is PB02.
      */
     gpio_enable_module_pin(AVR32_USART1_TXD_0_1_PIN, AVR32_USART1_TXD_0_1_FUNCTION);
     gpio_enable_module_pin(AVR32_USART1_RXD_0_1_PIN, AVR32_USART1_RXD_0_1_FUNCTION);
