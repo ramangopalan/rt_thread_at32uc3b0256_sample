@@ -6,6 +6,8 @@ bsp_avr32uc3b\application.c
 
 bsp_avr32uc3b\board.c
 
+bsp_avr32uc3b\drv_uart.c
+
 bsp_avr32uc3b\SOFTWARE_FRAMEWORK\DRIVERS\FLASHC\flashc.c
 
 bsp_avr32uc3b\SOFTWARE_FRAMEWORK\DRIVERS\GPIO\gpio.c
@@ -37,6 +39,8 @@ components\drivers\ipc\waitqueue.c
 components\drivers\ipc\workqueue.c
 
 components\drivers\misc\pin.c
+
+components\drivers\serial\serial.c
 
 components\finsh\cmd.c
 
@@ -93,8 +97,6 @@ libcpu\cpu.c
 libcpu\exception_gcc.S
 
 libcpu\interrupt.c
-
-libcpu\serial.c
 
 libcpu\stack.c
 

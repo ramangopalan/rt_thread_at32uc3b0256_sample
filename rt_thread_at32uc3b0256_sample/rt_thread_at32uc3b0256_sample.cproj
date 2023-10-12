@@ -130,83 +130,83 @@
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
     <ToolchainSettings>
       <Avr32Gcc>
-  <avr32gcc.common.outputfiles.hex>True</avr32gcc.common.outputfiles.hex>
-  <avr32gcc.common.outputfiles.lss>True</avr32gcc.common.outputfiles.lss>
-  <avr32gcc.common.outputfiles.eep>True</avr32gcc.common.outputfiles.eep>
-  <avr32gcc.common.outputfiles.srec>True</avr32gcc.common.outputfiles.srec>
-  <avr32gcc.compiler.symbols.DefSymbols>
-    <ListValues>
-      <Value>BOARD=USERBOARD</Value>
-      <Value>__RTTHREAD__</Value>
-      <Value>RT_USING_NEWLIBC</Value>
-      <Value>RT_USING_LIBC</Value>
-      <Value>_POSIX_C_SOURCE=1</Value>
-    </ListValues>
-  </avr32gcc.compiler.symbols.DefSymbols>
-  <avr32gcc.compiler.directories.IncludePaths>
-    <ListValues>
-      <Value>%24(PackRepoDir)\atmel\UC3B_DFP\1.0.29\include\AT32UC3B0256</Value>
-      <Value>../src/ASF/common/boards/user_board</Value>
-      <Value>../src</Value>
-      <Value>../src/config</Value>
-      <Value>../include</Value>
-      <Value>../bsp_avr32uc3b</Value>
-      <Value>../components/finsh</Value>
-      <Value>../bsp_avr32uc3b/SOFTWARE_FRAMEWORK</Value>
-      <Value>../libcpu</Value>
-      <Value>../bsp_avr32uc3b/SOFTWARE_FRAMEWORK/UTILS</Value>
-      <Value>../bsp_avr32uc3b/SOFTWARE_FRAMEWORK/DRIVERS/GPIO</Value>
-      <Value>../bsp_avr32uc3b/SOFTWARE_FRAMEWORK/DRIVERS/PM</Value>
-      <Value>../bsp_avr32uc3b/SOFTWARE_FRAMEWORK/DRIVERS/USART</Value>
-      <Value>../bsp_avr32uc3b/SOFTWARE_FRAMEWORK/DRIVERS/INTC</Value>
-      <Value>../bsp_avr32uc3b/SOFTWARE_FRAMEWORK/UTILS/PREPROCESSOR</Value>
-      <Value>../components/drivers/include</Value>
-      <Value>../components/libc/compilers/common/include</Value>
-      <Value>../components/libc/compilers/common/include/posix</Value>
-    </ListValues>
-  </avr32gcc.compiler.directories.IncludePaths>
-  <avr32gcc.compiler.optimization.OtherFlags>-fmessage-length=0</avr32gcc.compiler.optimization.OtherFlags>
-  <avr32gcc.compiler.optimization.PrepareFunctionsForGarbageCollection>True</avr32gcc.compiler.optimization.PrepareFunctionsForGarbageCollection>
-  <avr32gcc.compiler.optimization.UseAssemblerForPseudoInstructions>True</avr32gcc.compiler.optimization.UseAssemblerForPseudoInstructions>
-  <avr32gcc.compiler.optimization.DebugLevel>Maximum (-g3)</avr32gcc.compiler.optimization.DebugLevel>
-  <avr32gcc.compiler.warnings.AllWarnings>True</avr32gcc.compiler.warnings.AllWarnings>
-  <avr32gcc.compiler.miscellaneous.OtherFlags />
-  <avr32gcc.linker.general.GenerateMAPFile>False</avr32gcc.linker.general.GenerateMAPFile>
-  <avr32gcc.linker.libraries.Libraries>
-    <ListValues>
-      <Value>libm</Value>
-      <Value>libc</Value>
-    </ListValues>
-  </avr32gcc.linker.libraries.Libraries>
-  <avr32gcc.linker.libraries.LibrarySearchPaths>
-    <ListValues>
-      <Value>../bsp_avr32uc3b</Value>
-    </ListValues>
-  </avr32gcc.linker.libraries.LibrarySearchPaths>
-  <avr32gcc.linker.optimization.GarbageCollectUnusedSections>True</avr32gcc.linker.optimization.GarbageCollectUnusedSections>
-  <avr32gcc.linker.optimization.PutReadOnlyDataInWritableDataSection>True</avr32gcc.linker.optimization.PutReadOnlyDataInWritableDataSection>
-  <avr32gcc.linker.optimization.AllowDirectReferencesToDataSection>True</avr32gcc.linker.optimization.AllowDirectReferencesToDataSection>
-  <avr32gcc.linker.miscellaneous.LinkerFlags>-T avr32elf_uc3b0256.lds</avr32gcc.linker.miscellaneous.LinkerFlags>
-  <avr32gcc.assembler.general.IncludePaths>
-    <ListValues>
-      <Value>%24(PackRepoDir)\atmel\UC3B_DFP\1.0.29\include\AT32UC3B0256</Value>
-      <Value>../src/ASF/common/boards/user_board</Value>
-      <Value>../src</Value>
-      <Value>../src/config</Value>
-    </ListValues>
-  </avr32gcc.assembler.general.IncludePaths>
-  <avr32gcc.assembler.debugging.DebugLevel>Default (-g)</avr32gcc.assembler.debugging.DebugLevel>
-  <avr32gcc.preprocessingassembler.general.AssemblerFlags>-DBOARD=USERBOARD</avr32gcc.preprocessingassembler.general.AssemblerFlags>
-  <avr32gcc.preprocessingassembler.general.IncludePaths>
-    <ListValues>
-      <Value>%24(PackRepoDir)\atmel\UC3B_DFP\1.0.29\include\AT32UC3B0256</Value>
-      <Value>../src/ASF/common/boards/user_board</Value>
-      <Value>../src</Value>
-      <Value>../src/config</Value>
-    </ListValues>
-  </avr32gcc.preprocessingassembler.general.IncludePaths>
-  <avr32gcc.preprocessingassembler.debugging.DebugLevel>Default (-Wa,-g)</avr32gcc.preprocessingassembler.debugging.DebugLevel>
-</Avr32Gcc>
+        <avr32gcc.common.outputfiles.hex>True</avr32gcc.common.outputfiles.hex>
+        <avr32gcc.common.outputfiles.lss>True</avr32gcc.common.outputfiles.lss>
+        <avr32gcc.common.outputfiles.eep>True</avr32gcc.common.outputfiles.eep>
+        <avr32gcc.common.outputfiles.srec>True</avr32gcc.common.outputfiles.srec>
+        <avr32gcc.compiler.symbols.DefSymbols>
+          <ListValues>
+            <Value>BOARD=USERBOARD</Value>
+            <Value>__RTTHREAD__</Value>
+            <Value>RT_USING_NEWLIBC</Value>
+            <Value>RT_USING_LIBC</Value>
+            <Value>_POSIX_C_SOURCE=1</Value>
+          </ListValues>
+        </avr32gcc.compiler.symbols.DefSymbols>
+        <avr32gcc.compiler.directories.IncludePaths>
+          <ListValues>
+            <Value>%24(PackRepoDir)\atmel\UC3B_DFP\1.0.29\include\AT32UC3B0256</Value>
+            <Value>../src/ASF/common/boards/user_board</Value>
+            <Value>../src</Value>
+            <Value>../src/config</Value>
+            <Value>../include</Value>
+            <Value>../bsp_avr32uc3b</Value>
+            <Value>../components/finsh</Value>
+            <Value>../bsp_avr32uc3b/SOFTWARE_FRAMEWORK</Value>
+            <Value>../libcpu</Value>
+            <Value>../bsp_avr32uc3b/SOFTWARE_FRAMEWORK/UTILS</Value>
+            <Value>../bsp_avr32uc3b/SOFTWARE_FRAMEWORK/DRIVERS/GPIO</Value>
+            <Value>../bsp_avr32uc3b/SOFTWARE_FRAMEWORK/DRIVERS/PM</Value>
+            <Value>../bsp_avr32uc3b/SOFTWARE_FRAMEWORK/DRIVERS/USART</Value>
+            <Value>../bsp_avr32uc3b/SOFTWARE_FRAMEWORK/DRIVERS/INTC</Value>
+            <Value>../bsp_avr32uc3b/SOFTWARE_FRAMEWORK/UTILS/PREPROCESSOR</Value>
+            <Value>../components/drivers/include</Value>
+            <Value>../components/libc/compilers/common/include</Value>
+            <Value>../components/libc/compilers/common/include/posix</Value>
+          </ListValues>
+        </avr32gcc.compiler.directories.IncludePaths>
+        <avr32gcc.compiler.optimization.OtherFlags>-fmessage-length=0</avr32gcc.compiler.optimization.OtherFlags>
+        <avr32gcc.compiler.optimization.PrepareFunctionsForGarbageCollection>True</avr32gcc.compiler.optimization.PrepareFunctionsForGarbageCollection>
+        <avr32gcc.compiler.optimization.UseAssemblerForPseudoInstructions>True</avr32gcc.compiler.optimization.UseAssemblerForPseudoInstructions>
+        <avr32gcc.compiler.optimization.DebugLevel>Maximum (-g3)</avr32gcc.compiler.optimization.DebugLevel>
+        <avr32gcc.compiler.warnings.AllWarnings>True</avr32gcc.compiler.warnings.AllWarnings>
+        <avr32gcc.compiler.miscellaneous.OtherFlags />
+        <avr32gcc.linker.general.GenerateMAPFile>False</avr32gcc.linker.general.GenerateMAPFile>
+        <avr32gcc.linker.libraries.Libraries>
+          <ListValues>
+            <Value>libm</Value>
+            <Value>libc</Value>
+          </ListValues>
+        </avr32gcc.linker.libraries.Libraries>
+        <avr32gcc.linker.libraries.LibrarySearchPaths>
+          <ListValues>
+            <Value>../bsp_avr32uc3b</Value>
+          </ListValues>
+        </avr32gcc.linker.libraries.LibrarySearchPaths>
+        <avr32gcc.linker.optimization.GarbageCollectUnusedSections>True</avr32gcc.linker.optimization.GarbageCollectUnusedSections>
+        <avr32gcc.linker.optimization.PutReadOnlyDataInWritableDataSection>True</avr32gcc.linker.optimization.PutReadOnlyDataInWritableDataSection>
+        <avr32gcc.linker.optimization.AllowDirectReferencesToDataSection>True</avr32gcc.linker.optimization.AllowDirectReferencesToDataSection>
+        <avr32gcc.linker.miscellaneous.LinkerFlags>-T avr32elf_uc3b0256.lds</avr32gcc.linker.miscellaneous.LinkerFlags>
+        <avr32gcc.assembler.general.IncludePaths>
+          <ListValues>
+            <Value>%24(PackRepoDir)\atmel\UC3B_DFP\1.0.29\include\AT32UC3B0256</Value>
+            <Value>../src/ASF/common/boards/user_board</Value>
+            <Value>../src</Value>
+            <Value>../src/config</Value>
+          </ListValues>
+        </avr32gcc.assembler.general.IncludePaths>
+        <avr32gcc.assembler.debugging.DebugLevel>Default (-g)</avr32gcc.assembler.debugging.DebugLevel>
+        <avr32gcc.preprocessingassembler.general.AssemblerFlags>-DBOARD=USERBOARD</avr32gcc.preprocessingassembler.general.AssemblerFlags>
+        <avr32gcc.preprocessingassembler.general.IncludePaths>
+          <ListValues>
+            <Value>%24(PackRepoDir)\atmel\UC3B_DFP\1.0.29\include\AT32UC3B0256</Value>
+            <Value>../src/ASF/common/boards/user_board</Value>
+            <Value>../src</Value>
+            <Value>../src/config</Value>
+          </ListValues>
+        </avr32gcc.preprocessingassembler.general.IncludePaths>
+        <avr32gcc.preprocessingassembler.debugging.DebugLevel>Default (-Wa,-g)</avr32gcc.preprocessingassembler.debugging.DebugLevel>
+      </Avr32Gcc>
     </ToolchainSettings>
   </PropertyGroup>
   <ItemGroup>
@@ -265,6 +265,12 @@
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="bsp_avr32uc3b\board.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="bsp_avr32uc3b\drv_uart.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="bsp_avr32uc3b\drv_uart.h">
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="bsp_avr32uc3b\rtconfig.h">
@@ -534,9 +540,9 @@
     <Compile Include="components\drivers\misc\pin.c">
       <SubType>compile</SubType>
     </Compile>
-    <None Include="components\drivers\serial\serial.c">
+    <Compile Include="components\drivers\serial\serial.c">
       <SubType>compile</SubType>
-    </None>
+    </Compile>
     <Compile Include="components\finsh\cmd.c">
       <SubType>compile</SubType>
     </Compile>
@@ -711,12 +717,12 @@
     <Compile Include="libcpu\interrupt.c">
       <SubType>compile</SubType>
     </Compile>
-    <Compile Include="libcpu\serial.c">
+    <None Include="libcpu\serial.c">
       <SubType>compile</SubType>
-    </Compile>
-    <Compile Include="libcpu\serial.h">
+    </None>
+    <None Include="libcpu\serial.h">
       <SubType>compile</SubType>
-    </Compile>
+    </None>
     <Compile Include="libcpu\stack.c">
       <SubType>compile</SubType>
     </Compile>

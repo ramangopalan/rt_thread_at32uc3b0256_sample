@@ -82,6 +82,7 @@ SUBDIRS :=  \
 C_SRCS +=  \
 ../bsp_avr32uc3b/application.c \
 ../bsp_avr32uc3b/board.c \
+../bsp_avr32uc3b/drv_uart.c \
 ../bsp_avr32uc3b/SOFTWARE_FRAMEWORK/DRIVERS/FLASHC/flashc.c \
 ../bsp_avr32uc3b/SOFTWARE_FRAMEWORK/DRIVERS/GPIO/gpio.c \
 ../bsp_avr32uc3b/SOFTWARE_FRAMEWORK/DRIVERS/INTC/intc.c \
@@ -98,6 +99,7 @@ C_SRCS +=  \
 ../components/drivers/ipc/waitqueue.c \
 ../components/drivers/ipc/workqueue.c \
 ../components/drivers/misc/pin.c \
+../components/drivers/serial/serial.c \
 ../components/finsh/cmd.c \
 ../components/finsh/msh.c \
 ../components/finsh/msh_parse.c \
@@ -124,7 +126,6 @@ C_SRCS +=  \
 ../kernel/timer.c \
 ../libcpu/cpu.c \
 ../libcpu/interrupt.c \
-../libcpu/serial.c \
 ../libcpu/stack.c \
 ../src/ASF/common/boards/user_board/init.c \
 ../src/main.c
@@ -141,6 +142,7 @@ ASM_SRCS +=
 OBJS +=  \
 bsp_avr32uc3b/application.o \
 bsp_avr32uc3b/board.o \
+bsp_avr32uc3b/drv_uart.o \
 bsp_avr32uc3b/SOFTWARE_FRAMEWORK/DRIVERS/FLASHC/flashc.o \
 bsp_avr32uc3b/SOFTWARE_FRAMEWORK/DRIVERS/GPIO/gpio.o \
 bsp_avr32uc3b/SOFTWARE_FRAMEWORK/DRIVERS/INTC/intc.o \
@@ -157,6 +159,7 @@ components/drivers/ipc/ringbuffer.o \
 components/drivers/ipc/waitqueue.o \
 components/drivers/ipc/workqueue.o \
 components/drivers/misc/pin.o \
+components/drivers/serial/serial.o \
 components/finsh/cmd.o \
 components/finsh/msh.o \
 components/finsh/msh_parse.o \
@@ -185,7 +188,6 @@ libcpu/context_gcc.o \
 libcpu/cpu.o \
 libcpu/exception_gcc.o \
 libcpu/interrupt.o \
-libcpu/serial.o \
 libcpu/stack.o \
 src/ASF/common/boards/user_board/init.o \
 src/main.o
@@ -193,6 +195,7 @@ src/main.o
 OBJS_AS_ARGS +=  \
 bsp_avr32uc3b/application.o \
 bsp_avr32uc3b/board.o \
+bsp_avr32uc3b/drv_uart.o \
 bsp_avr32uc3b/SOFTWARE_FRAMEWORK/DRIVERS/FLASHC/flashc.o \
 bsp_avr32uc3b/SOFTWARE_FRAMEWORK/DRIVERS/GPIO/gpio.o \
 bsp_avr32uc3b/SOFTWARE_FRAMEWORK/DRIVERS/INTC/intc.o \
@@ -209,6 +212,7 @@ components/drivers/ipc/ringbuffer.o \
 components/drivers/ipc/waitqueue.o \
 components/drivers/ipc/workqueue.o \
 components/drivers/misc/pin.o \
+components/drivers/serial/serial.o \
 components/finsh/cmd.o \
 components/finsh/msh.o \
 components/finsh/msh_parse.o \
@@ -237,7 +241,6 @@ libcpu/context_gcc.o \
 libcpu/cpu.o \
 libcpu/exception_gcc.o \
 libcpu/interrupt.o \
-libcpu/serial.o \
 libcpu/stack.o \
 src/ASF/common/boards/user_board/init.o \
 src/main.o
@@ -245,6 +248,7 @@ src/main.o
 C_DEPS +=  \
 bsp_avr32uc3b/application.d \
 bsp_avr32uc3b/board.d \
+bsp_avr32uc3b/drv_uart.d \
 bsp_avr32uc3b/SOFTWARE_FRAMEWORK/DRIVERS/FLASHC/flashc.d \
 bsp_avr32uc3b/SOFTWARE_FRAMEWORK/DRIVERS/GPIO/gpio.d \
 bsp_avr32uc3b/SOFTWARE_FRAMEWORK/DRIVERS/INTC/intc.d \
@@ -261,6 +265,7 @@ components/drivers/ipc/ringbuffer.d \
 components/drivers/ipc/waitqueue.d \
 components/drivers/ipc/workqueue.d \
 components/drivers/misc/pin.d \
+components/drivers/serial/serial.d \
 components/finsh/cmd.d \
 components/finsh/msh.d \
 components/finsh/msh_parse.d \
@@ -289,7 +294,6 @@ libcpu/context_gcc.d \
 libcpu/cpu.d \
 libcpu/exception_gcc.d \
 libcpu/interrupt.d \
-libcpu/serial.d \
 libcpu/stack.d \
 src/ASF/common/boards/user_board/init.d \
 src/main.d
@@ -297,6 +301,7 @@ src/main.d
 C_DEPS_AS_ARGS +=  \
 bsp_avr32uc3b/application.d \
 bsp_avr32uc3b/board.d \
+bsp_avr32uc3b/drv_uart.d \
 bsp_avr32uc3b/SOFTWARE_FRAMEWORK/DRIVERS/FLASHC/flashc.d \
 bsp_avr32uc3b/SOFTWARE_FRAMEWORK/DRIVERS/GPIO/gpio.d \
 bsp_avr32uc3b/SOFTWARE_FRAMEWORK/DRIVERS/INTC/intc.d \
@@ -313,6 +318,7 @@ components/drivers/ipc/ringbuffer.d \
 components/drivers/ipc/waitqueue.d \
 components/drivers/ipc/workqueue.d \
 components/drivers/misc/pin.d \
+components/drivers/serial/serial.d \
 components/finsh/cmd.d \
 components/finsh/msh.d \
 components/finsh/msh_parse.d \
@@ -341,7 +347,6 @@ libcpu/context_gcc.d \
 libcpu/cpu.d \
 libcpu/exception_gcc.d \
 libcpu/interrupt.d \
-libcpu/serial.d \
 libcpu/stack.d \
 src/ASF/common/boards/user_board/init.d \
 src/main.d
@@ -369,6 +374,13 @@ bsp_avr32uc3b/application.o: ../bsp_avr32uc3b/application.c
 	
 
 bsp_avr32uc3b/board.o: ../bsp_avr32uc3b/board.c
+	@echo Building file: $<
+	@echo Invoking: AVR32/GNU C Compiler : 4.4.7
+	$(QUOTE)C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr32\avr32-gnu-toolchain\bin\avr32-gcc.exe$(QUOTE)  -x c -DBOARD=USERBOARD -D__RTTHREAD__ -DRT_USING_NEWLIBC -DRT_USING_LIBC -D_POSIX_C_SOURCE=1  -I"C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\UC3B_DFP\1.0.29\include\AT32UC3B0256" -I"../src/ASF/common/boards/user_board" -I"../src" -I"../src/config" -I"../include" -I"../bsp_avr32uc3b" -I"../components/finsh" -I"../bsp_avr32uc3b/SOFTWARE_FRAMEWORK" -I"../libcpu" -I"../bsp_avr32uc3b/SOFTWARE_FRAMEWORK/UTILS" -I"../bsp_avr32uc3b/SOFTWARE_FRAMEWORK/DRIVERS/GPIO" -I"../bsp_avr32uc3b/SOFTWARE_FRAMEWORK/DRIVERS/PM" -I"../bsp_avr32uc3b/SOFTWARE_FRAMEWORK/DRIVERS/USART" -I"../bsp_avr32uc3b/SOFTWARE_FRAMEWORK/DRIVERS/INTC" -I"../bsp_avr32uc3b/SOFTWARE_FRAMEWORK/UTILS/PREPROCESSOR" -I"../components/drivers/include" -I"../components/libc/compilers/common/include" -I"../components/libc/compilers/common/include/posix"  -O0 -fmessage-length=0 -ffunction-sections -masm-addr-pseudos -g3 -Wall -mpart=uc3b0256 -c -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
+	@echo Finished building: $<
+	
+
+bsp_avr32uc3b/drv_uart.o: ../bsp_avr32uc3b/drv_uart.c
 	@echo Building file: $<
 	@echo Invoking: AVR32/GNU C Compiler : 4.4.7
 	$(QUOTE)C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr32\avr32-gnu-toolchain\bin\avr32-gcc.exe$(QUOTE)  -x c -DBOARD=USERBOARD -D__RTTHREAD__ -DRT_USING_NEWLIBC -DRT_USING_LIBC -D_POSIX_C_SOURCE=1  -I"C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\UC3B_DFP\1.0.29\include\AT32UC3B0256" -I"../src/ASF/common/boards/user_board" -I"../src" -I"../src/config" -I"../include" -I"../bsp_avr32uc3b" -I"../components/finsh" -I"../bsp_avr32uc3b/SOFTWARE_FRAMEWORK" -I"../libcpu" -I"../bsp_avr32uc3b/SOFTWARE_FRAMEWORK/UTILS" -I"../bsp_avr32uc3b/SOFTWARE_FRAMEWORK/DRIVERS/GPIO" -I"../bsp_avr32uc3b/SOFTWARE_FRAMEWORK/DRIVERS/PM" -I"../bsp_avr32uc3b/SOFTWARE_FRAMEWORK/DRIVERS/USART" -I"../bsp_avr32uc3b/SOFTWARE_FRAMEWORK/DRIVERS/INTC" -I"../bsp_avr32uc3b/SOFTWARE_FRAMEWORK/UTILS/PREPROCESSOR" -I"../components/drivers/include" -I"../components/libc/compilers/common/include" -I"../components/libc/compilers/common/include/posix"  -O0 -fmessage-length=0 -ffunction-sections -masm-addr-pseudos -g3 -Wall -mpart=uc3b0256 -c -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
@@ -481,6 +493,13 @@ components/drivers/ipc/workqueue.o: ../components/drivers/ipc/workqueue.c
 	
 
 components/drivers/misc/pin.o: ../components/drivers/misc/pin.c
+	@echo Building file: $<
+	@echo Invoking: AVR32/GNU C Compiler : 4.4.7
+	$(QUOTE)C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr32\avr32-gnu-toolchain\bin\avr32-gcc.exe$(QUOTE)  -x c -DBOARD=USERBOARD -D__RTTHREAD__ -DRT_USING_NEWLIBC -DRT_USING_LIBC -D_POSIX_C_SOURCE=1  -I"C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\UC3B_DFP\1.0.29\include\AT32UC3B0256" -I"../src/ASF/common/boards/user_board" -I"../src" -I"../src/config" -I"../include" -I"../bsp_avr32uc3b" -I"../components/finsh" -I"../bsp_avr32uc3b/SOFTWARE_FRAMEWORK" -I"../libcpu" -I"../bsp_avr32uc3b/SOFTWARE_FRAMEWORK/UTILS" -I"../bsp_avr32uc3b/SOFTWARE_FRAMEWORK/DRIVERS/GPIO" -I"../bsp_avr32uc3b/SOFTWARE_FRAMEWORK/DRIVERS/PM" -I"../bsp_avr32uc3b/SOFTWARE_FRAMEWORK/DRIVERS/USART" -I"../bsp_avr32uc3b/SOFTWARE_FRAMEWORK/DRIVERS/INTC" -I"../bsp_avr32uc3b/SOFTWARE_FRAMEWORK/UTILS/PREPROCESSOR" -I"../components/drivers/include" -I"../components/libc/compilers/common/include" -I"../components/libc/compilers/common/include/posix"  -O0 -fmessage-length=0 -ffunction-sections -masm-addr-pseudos -g3 -Wall -mpart=uc3b0256 -c -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
+	@echo Finished building: $<
+	
+
+components/drivers/serial/serial.o: ../components/drivers/serial/serial.c
 	@echo Building file: $<
 	@echo Invoking: AVR32/GNU C Compiler : 4.4.7
 	$(QUOTE)C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr32\avr32-gnu-toolchain\bin\avr32-gcc.exe$(QUOTE)  -x c -DBOARD=USERBOARD -D__RTTHREAD__ -DRT_USING_NEWLIBC -DRT_USING_LIBC -D_POSIX_C_SOURCE=1  -I"C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\UC3B_DFP\1.0.29\include\AT32UC3B0256" -I"../src/ASF/common/boards/user_board" -I"../src" -I"../src/config" -I"../include" -I"../bsp_avr32uc3b" -I"../components/finsh" -I"../bsp_avr32uc3b/SOFTWARE_FRAMEWORK" -I"../libcpu" -I"../bsp_avr32uc3b/SOFTWARE_FRAMEWORK/UTILS" -I"../bsp_avr32uc3b/SOFTWARE_FRAMEWORK/DRIVERS/GPIO" -I"../bsp_avr32uc3b/SOFTWARE_FRAMEWORK/DRIVERS/PM" -I"../bsp_avr32uc3b/SOFTWARE_FRAMEWORK/DRIVERS/USART" -I"../bsp_avr32uc3b/SOFTWARE_FRAMEWORK/DRIVERS/INTC" -I"../bsp_avr32uc3b/SOFTWARE_FRAMEWORK/UTILS/PREPROCESSOR" -I"../components/drivers/include" -I"../components/libc/compilers/common/include" -I"../components/libc/compilers/common/include/posix"  -O0 -fmessage-length=0 -ffunction-sections -masm-addr-pseudos -g3 -Wall -mpart=uc3b0256 -c -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
@@ -663,13 +682,6 @@ libcpu/cpu.o: ../libcpu/cpu.c
 	
 
 libcpu/interrupt.o: ../libcpu/interrupt.c
-	@echo Building file: $<
-	@echo Invoking: AVR32/GNU C Compiler : 4.4.7
-	$(QUOTE)C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr32\avr32-gnu-toolchain\bin\avr32-gcc.exe$(QUOTE)  -x c -DBOARD=USERBOARD -D__RTTHREAD__ -DRT_USING_NEWLIBC -DRT_USING_LIBC -D_POSIX_C_SOURCE=1  -I"C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\UC3B_DFP\1.0.29\include\AT32UC3B0256" -I"../src/ASF/common/boards/user_board" -I"../src" -I"../src/config" -I"../include" -I"../bsp_avr32uc3b" -I"../components/finsh" -I"../bsp_avr32uc3b/SOFTWARE_FRAMEWORK" -I"../libcpu" -I"../bsp_avr32uc3b/SOFTWARE_FRAMEWORK/UTILS" -I"../bsp_avr32uc3b/SOFTWARE_FRAMEWORK/DRIVERS/GPIO" -I"../bsp_avr32uc3b/SOFTWARE_FRAMEWORK/DRIVERS/PM" -I"../bsp_avr32uc3b/SOFTWARE_FRAMEWORK/DRIVERS/USART" -I"../bsp_avr32uc3b/SOFTWARE_FRAMEWORK/DRIVERS/INTC" -I"../bsp_avr32uc3b/SOFTWARE_FRAMEWORK/UTILS/PREPROCESSOR" -I"../components/drivers/include" -I"../components/libc/compilers/common/include" -I"../components/libc/compilers/common/include/posix"  -O0 -fmessage-length=0 -ffunction-sections -masm-addr-pseudos -g3 -Wall -mpart=uc3b0256 -c -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
-	@echo Finished building: $<
-	
-
-libcpu/serial.o: ../libcpu/serial.c
 	@echo Building file: $<
 	@echo Invoking: AVR32/GNU C Compiler : 4.4.7
 	$(QUOTE)C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr32\avr32-gnu-toolchain\bin\avr32-gcc.exe$(QUOTE)  -x c -DBOARD=USERBOARD -D__RTTHREAD__ -DRT_USING_NEWLIBC -DRT_USING_LIBC -D_POSIX_C_SOURCE=1  -I"C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\UC3B_DFP\1.0.29\include\AT32UC3B0256" -I"../src/ASF/common/boards/user_board" -I"../src" -I"../src/config" -I"../include" -I"../bsp_avr32uc3b" -I"../components/finsh" -I"../bsp_avr32uc3b/SOFTWARE_FRAMEWORK" -I"../libcpu" -I"../bsp_avr32uc3b/SOFTWARE_FRAMEWORK/UTILS" -I"../bsp_avr32uc3b/SOFTWARE_FRAMEWORK/DRIVERS/GPIO" -I"../bsp_avr32uc3b/SOFTWARE_FRAMEWORK/DRIVERS/PM" -I"../bsp_avr32uc3b/SOFTWARE_FRAMEWORK/DRIVERS/USART" -I"../bsp_avr32uc3b/SOFTWARE_FRAMEWORK/DRIVERS/INTC" -I"../bsp_avr32uc3b/SOFTWARE_FRAMEWORK/UTILS/PREPROCESSOR" -I"../components/drivers/include" -I"../components/libc/compilers/common/include" -I"../components/libc/compilers/common/include/posix"  -O0 -fmessage-length=0 -ffunction-sections -masm-addr-pseudos -g3 -Wall -mpart=uc3b0256 -c -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 

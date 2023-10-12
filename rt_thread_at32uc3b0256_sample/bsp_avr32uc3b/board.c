@@ -52,7 +52,8 @@ static void peripherals_init(void)
         .osc0_startup = AVR32_PM_OSCCTRL0_STARTUP_2048_RCOSC
     };
     pm_configure_clocks(&pm_freq_param);
-
+	INTC_init_interrupts();
+#if (0)
     /*
      * USART1 initialization
      * Raman: From the data-sheet (at32uc3b0256, page 8), I gather the following:
@@ -74,6 +75,7 @@ static void peripherals_init(void)
     INTC_init_interrupts();
     INTC_register_interrupt(&rt_hw_serial_isr, AVR32_USART1_IRQ, AVR32_INTC_INT0);
     AVR32_USART1.ier = AVR32_USART_IER_RXRDY_MASK;
+#endif
 }
 
 /**
@@ -95,7 +97,21 @@ void rt_hw_board_init(void)
 
     peripherals_init();
     cpu_counter_init();
+	
+#ifdef RT_USING_COMPONENTS_INIT
+rt_components_board_init();
+#endif
 
-    rt_hw_serial_register(&_rt_usart_device, "uart1", RT_DEVICE_FLAG_RDWR | RT_DEVICE_FLAG_INT_RX | RT_DEVICE_FLAG_STREAM, &uart);
-    rt_console_set_device("uart1");
+#ifdef RT_USING_SERIAL
+//stdio_init_all();
+rt_hw_uart_init();
+#endif
+
+#ifdef RT_USING_CONSOLE
+rt_console_set_device(RT_CONSOLE_DEVICE_NAME);
+#endif
+
+
+    //rt_hw_serial_register(&_rt_usart_device, "uart1", RT_DEVICE_FLAG_RDWR | RT_DEVICE_FLAG_INT_RX | RT_DEVICE_FLAG_STREAM, &uart);
+    //rt_console_set_device("uart1");
 }
