@@ -128,7 +128,10 @@ void avr32uc3b_uart1_isr(void)
 static rt_err_t avr32uc3b_uart_configure(struct rt_serial_device *serial, struct serial_configure *cfg)
 {
     struct avr32uc3b_uart_dev *uart = RT_NULL;
-    unsigned char l_parity, l_stop, l_baud, l_data_bits;
+    unsigned char l_parity;
+	unsigned short l_stop;
+	unsigned long l_baud;
+	unsigned char l_data_bits;
 
     RT_ASSERT(serial != RT_NULL);
     RT_ASSERT(cfg != RT_NULL);
@@ -157,18 +160,11 @@ static rt_err_t avr32uc3b_uart_configure(struct rt_serial_device *serial, struct
     l_data_bits = cfg->data_bits;
 
     /* Populate */
-    //usart_options_t usart_options = {
-        //.baudrate = l_baud,
-        //.charlength = l_data_bits,
-        //.paritytype = l_parity,
-        //.stopbits = l_stop,
-        //.channelmode = USART_NORMAL_CHMODE
-    //};
-    static const usart_options_t usart_options = {
-        .baudrate = 115200,
-        .charlength = 8,
-        .paritytype = USART_NO_PARITY,
-        .stopbits = USART_1_STOPBIT,
+    usart_options_t usart_options = {
+        .baudrate = l_baud,
+        .charlength = l_data_bits,
+        .paritytype = l_parity,
+        .stopbits = l_stop,
         .channelmode = USART_NORMAL_CHMODE
     };
 
